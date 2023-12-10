@@ -33,11 +33,11 @@ public class EncontrarVocales extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txtTexto = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
-        btnObtener = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnVocales = new javax.swing.JButton();
+        btnEspacios = new javax.swing.JButton();
+        btnSeparar = new javax.swing.JButton();
+        btnReversa = new javax.swing.JButton();
+        btnRemplazar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,38 +45,38 @@ public class EncontrarVocales extends javax.swing.JFrame {
 
         jLabel2.setText("Igrese un texto");
 
-        btnObtener.setText("VOCALES");
-        btnObtener.addActionListener(new java.awt.event.ActionListener() {
+        btnVocales.setText("VOCALES");
+        btnVocales.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnObtenerActionPerformed(evt);
+                btnVocalesActionPerformed(evt);
             }
         });
 
-        jButton1.setText("ESPACIOS");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnEspacios.setText("ESPACIOS");
+        btnEspacios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnEspaciosActionPerformed(evt);
             }
         });
 
-        jButton2.setText("SEPARAR");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnSeparar.setText("SEPARAR");
+        btnSeparar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnSepararActionPerformed(evt);
             }
         });
 
-        jButton3.setText("REVERSA");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnReversa.setText("REVERSA");
+        btnReversa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnReversaActionPerformed(evt);
             }
         });
 
-        jButton4.setText("REMPLAZAR");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnRemplazar.setText("REMPLAZAR");
+        btnRemplazar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnRemplazarActionPerformed(evt);
             }
         });
 
@@ -87,17 +87,17 @@ public class EncontrarVocales extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnObtener, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnEspacios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnVocales, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(42, 42, 42)
-                        .addComponent(jButton2))
+                        .addComponent(btnSeparar))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(43, 43, 43)
-                        .addComponent(jButton3)))
+                        .addComponent(btnReversa)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addComponent(jButton4)
+                .addComponent(btnRemplazar)
                 .addGap(26, 26, 26))
         );
         jPanel1Layout.setVerticalGroup(
@@ -105,13 +105,13 @@ public class EncontrarVocales extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnObtener)
-                    .addComponent(jButton2)
-                    .addComponent(jButton4))
+                    .addComponent(btnVocales)
+                    .addComponent(btnSeparar)
+                    .addComponent(btnRemplazar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton1))
+                    .addComponent(btnReversa)
+                    .addComponent(btnEspacios))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -151,88 +151,43 @@ public class EncontrarVocales extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnObtenerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnObtenerActionPerformed
-        // TODO add your handling code here:
-        String cadena = txtTexto.getText();
-
-        int cont_a = 0;
-        int cont_e = 0;
-        int cont_i = 0;
-        int cont_o = 0;
-        int cont_u = 0;
-
-        for (int i = 0; i < cadena.length(); i++) {
-
-            switch (cadena.charAt(i)) {
-                case 'a', 'A' ->
-                    cont_a++;
-                case 'e', 'E' ->
-                    cont_e++;
-                case 'i', 'I' ->
-                    cont_i++;
-                case 'o', 'O' ->
-                    cont_o++;
-                case 'u', 'U' ->
-                    cont_o++;
-                default -> {
-
-                }
-
-            }
-        }
-        JOptionPane.showMessageDialog(rootPane, "letra a: " + cont_a + "\n"
-                + "letra e: " + cont_e + "\n"
-                + "letra i: " + cont_i + "\n"
-                + "letra o: " + cont_o + "\n"
-                + "letra u: " + cont_u);
-    }//GEN-LAST:event_btnObtenerActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+    private void btnVocalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVocalesActionPerformed
 
         String cadena = txtTexto.getText();
-        int cont = 0;
+        this.encontrarVocales(cadena);
 
-        for (int i = 0; i < cadena.length(); i++) {
-            if (cadena.charAt(i) == ' ') {
-                cont++;
-            } else {
-            }
-        }
-        JOptionPane.showMessageDialog(rootPane, "NUMERO DE ESPACIOS : " + cont);
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnVocalesActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnEspaciosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEspaciosActionPerformed
+
+        String cadena = txtTexto.getText();
+        this.contarEspacios(cadena);
+
+
+    }//GEN-LAST:event_btnEspaciosActionPerformed
+
+    private void btnSepararActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSepararActionPerformed
         // TODO add your handling code here:
         String cadena = txtTexto.getText();
+        this.separarPalabras(cadena);
 
-        String[] palabras = cadena.split("\\s+");
+    }//GEN-LAST:event_btnSepararActionPerformed
 
-        JOptionPane.showMessageDialog(rootPane, palabras);
-
-
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnReversaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReversaActionPerformed
         // TODO add your handling code here:
         String cadena = txtTexto.getText();
-        StringBuilder sb = new StringBuilder(cadena);
+        this.reversa(cadena);
 
-        sb.reverse();
-        JOptionPane.showMessageDialog(rootPane, "CADENA EN REVERSO: " + sb.toString());
 
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnReversaActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnRemplazarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemplazarActionPerformed
         // TODO add your handling code here:
         String cadena = txtTexto.getText();
-        StringBuilder sb = new StringBuilder(cadena);
-        String cadenaModificada= cadena.replace('O', '$').replace('o', '$');
-        
-        JOptionPane.showConfirmDialog(rootPane, "MODIFICADO: "+"\n"+cadenaModificada+"\n"+"ORIGINAL: "+"\n"+cadena);
+        this.remplazar(cadena);
 
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnRemplazarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -269,12 +224,80 @@ public class EncontrarVocales extends javax.swing.JFrame {
         });
     }
 
+    public void encontrarVocales(String cadena) {
+
+        int cont_a = 0;
+        int cont_e = 0;
+        int cont_i = 0;
+        int cont_o = 0;
+        int cont_u = 0;
+
+        for (int i = 0; i < cadena.length(); i++) {
+
+            switch (cadena.charAt(i)) {
+                case 'a', 'A' ->
+                    cont_a++;
+                case 'e', 'E' ->
+                    cont_e++;
+                case 'i', 'I' ->
+                    cont_i++;
+                case 'o', 'O' ->
+                    cont_o++;
+                case 'u', 'U' ->
+                    cont_o++;
+                default -> {
+
+                }
+
+            }
+        }
+        JOptionPane.showMessageDialog(rootPane, "letra a: " + cont_a + "\n"
+                + "letra e: " + cont_e + "\n"
+                + "letra i: " + cont_i + "\n"
+                + "letra o: " + cont_o + "\n"
+                + "letra u: " + cont_u);
+    }
+
+    public void contarEspacios(String cadena) {
+        int cont = 0;
+
+        for (int i = 0; i < cadena.length(); i++) {
+            if (cadena.charAt(i) == ' ') {
+                cont++;
+            } else {
+            }
+        }
+        JOptionPane.showMessageDialog(rootPane, "NUMERO DE ESPACIOS : " + cont);
+    }
+
+    public void separarPalabras(String cadena) {
+        String[] palabras = cadena.split("\\s+");
+
+        JOptionPane.showMessageDialog(rootPane, palabras);
+
+    }
+
+    public void reversa(String cadena) {
+        StringBuilder sb = new StringBuilder(cadena);
+
+        sb.reverse();
+        JOptionPane.showMessageDialog(rootPane, "CADENA EN REVERSO: " + "\n" + sb);
+    }
+
+    public void remplazar(String cadena) {
+        StringBuilder sb = new StringBuilder(cadena);
+        String cadenaModificada = cadena.replace('O', '$').replace('o', '$');
+
+        JOptionPane.showMessageDialog(rootPane, "MODIFICADO: " + "\n" + cadenaModificada + "\n" + "ORIGINAL: " + "\n" + cadena);
+
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnObtener;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btnEspacios;
+    private javax.swing.JButton btnRemplazar;
+    private javax.swing.JButton btnReversa;
+    private javax.swing.JButton btnSeparar;
+    private javax.swing.JButton btnVocales;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
